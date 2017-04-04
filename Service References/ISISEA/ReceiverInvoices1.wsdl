@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://isisbilisim.com.tr/services/earchive" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReceiverInvoices" targetNamespace="http://isisbilisim.com.tr/services/earchive" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://isisbilisim.com.tr/services/earchive/Imports">
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?xsd=xsd0" namespace="http://isisbilisim.com.tr/services/earchive" />
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReceiverInvoices_SendInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_SendInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_ApproveInvoicesByETTN_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveInvoicesByETTN" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_ApproveInvoicesByETTN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveInvoicesByETTNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_ApproveInvoicesByDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveInvoicesByDateRange" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_ApproveInvoicesByDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveInvoicesByDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_AddRawData_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRawData" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_AddRawData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRawDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CancelInvoiceByETTN_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInvoiceByETTN" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CancelInvoiceByETTN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInvoiceByETTNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CancelInvoiceByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInvoiceByID" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CancelInvoiceByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelInvoiceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_DeleteInvoiceByETTN_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceByETTN" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_DeleteInvoiceByETTN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceByETTNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_DeleteInvoiceByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceByID" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_DeleteInvoiceByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInvoiceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CheckInvoiceByETTN_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInvoiceByETTN" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CheckInvoiceByETTN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInvoiceByETTNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CheckInvoiceByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInvoiceByID" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_CheckInvoiceByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInvoiceByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_GetInvoiceHeaderByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceHeaderByID" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_GetInvoiceHeaderByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceHeaderByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_SendSignedUblTr_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSignedUblTr" />
+  </wsdl:message>
+  <wsdl:message name="IReceiverInvoices_SendSignedUblTr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSignedUblTrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReceiverInvoices">
+    <wsdl:operation name="SendInvoices">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/SendInvoices" message="tns:IReceiverInvoices_SendInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/SendInvoicesResponse" message="tns:IReceiverInvoices_SendInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveInvoicesByETTN">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/ApproveInvoicesByETTN" message="tns:IReceiverInvoices_ApproveInvoicesByETTN_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/ApproveInvoicesByETTNResponse" message="tns:IReceiverInvoices_ApproveInvoicesByETTN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveInvoicesByDateRange">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/ApproveInvoicesByDateRange" message="tns:IReceiverInvoices_ApproveInvoicesByDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/ApproveInvoicesByDateRangeResponse" message="tns:IReceiverInvoices_ApproveInvoicesByDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRawData">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/AddRawData" message="tns:IReceiverInvoices_AddRawData_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/AddRawDataResponse" message="tns:IReceiverInvoices_AddRawData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoiceByETTN">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CancelInvoiceByETTN" message="tns:IReceiverInvoices_CancelInvoiceByETTN_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CancelInvoiceByETTNResponse" message="tns:IReceiverInvoices_CancelInvoiceByETTN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoiceByID">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CancelInvoiceByID" message="tns:IReceiverInvoices_CancelInvoiceByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CancelInvoiceByIDResponse" message="tns:IReceiverInvoices_CancelInvoiceByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceByETTN">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/DeleteInvoiceByETTN" message="tns:IReceiverInvoices_DeleteInvoiceByETTN_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/DeleteInvoiceByETTNResponse" message="tns:IReceiverInvoices_DeleteInvoiceByETTN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceByID">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/DeleteInvoiceByID" message="tns:IReceiverInvoices_DeleteInvoiceByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/DeleteInvoiceByIDResponse" message="tns:IReceiverInvoices_DeleteInvoiceByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInvoiceByETTN">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CheckInvoiceByETTN" message="tns:IReceiverInvoices_CheckInvoiceByETTN_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CheckInvoiceByETTNResponse" message="tns:IReceiverInvoices_CheckInvoiceByETTN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInvoiceByID">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CheckInvoiceByID" message="tns:IReceiverInvoices_CheckInvoiceByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CheckInvoiceByIDResponse" message="tns:IReceiverInvoices_CheckInvoiceByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceHeaderByID">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/GetInvoiceHeaderByID" message="tns:IReceiverInvoices_GetInvoiceHeaderByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/GetInvoiceHeaderByIDResponse" message="tns:IReceiverInvoices_GetInvoiceHeaderByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSignedUblTr">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/SendSignedUblTr" message="tns:IReceiverInvoices_SendSignedUblTr_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/SendSignedUblTrResponse" message="tns:IReceiverInvoices_SendSignedUblTr_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="ReceiverInvoices">
+    <wsdl:port name="CustomBinding_IReceiverInvoices" binding="i0:CustomBinding_IReceiverInvoices">
+      <soap:address location="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

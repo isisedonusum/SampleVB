@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://isisbilisim.com.tr/services/earchive" elementFormDefault="qualified" targetNamespace="http://isisbilisim.com.tr/services/earchive" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?xsd=xsd1" namespace="http://microsoft.com/wsdl/types/" />
+  <xs:element name="SendInvoices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Invoices" type="tns:ArrayOfInvoices" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfInvoices">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoices" nillable="true" type="tns:Invoices" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Invoices">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Invoice">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ACParty" type="tns:Party" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PSParty" type="tns:Party" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TaxList" type="tns:ArrayOfTax" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RawDataList" type="tns:ArrayOfRawData" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ExtensionList" type="tns:ArrayOfExtension" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="RowGuid" type="q1:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InvoiceID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ModuleCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ModuleKey" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SendType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InvoiceTime" type="tns:TimeSpan" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PayableAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TaxTotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ASPWebURL" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ACPPaymentMethod" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ASPPaymentAgent" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ACPPaymentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ASPSendDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ReservedDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="ReportID" nillable="true" type="q2:guid" />
+      <xs:element xmlns:q3="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="StatusProcessID" type="q3:char" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UpdatedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="InvoiceDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PSDSerial" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PSDZNo" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PSDReceiptNo" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PSDReceiptDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PSDReceiptType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimeSpan" />
+  <xs:complexType name="Party">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="VKNTCKN" type="xs:long" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Agency" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Identifier" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EMail" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTax">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tax" nillable="true" type="tns:Tax" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Tax">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="BaseAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Withholding" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TaxAmount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TaxPercent" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfRawData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RawData" nillable="true" type="tns:RawData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RawData">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="RowGuid" type="q4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FileType" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FileName" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsAtFileStorage" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BinaryData" type="xs:base64Binary" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsMaster" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocCreatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DocCreatedBy" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Hash" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Extension" nillable="true" type="tns:Extension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Extension">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Structure" type="tns:StructureType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValuePart1" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValuePart2" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValuePart3" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ValuePart4" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UpdatedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="UpdatedBy" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StructureType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PROCESS_FIELD" />
+      <xs:enumeration value="SEARCH_FIELD" />
+      <xs:enumeration value="ADDITIONAL_FIELD" />
+      <xs:enumeration value="PORTAL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SendInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SendInvoicesResult" type="tns:ArrayOfReceiverInvoicesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfReceiverInvoicesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReceiverInvoicesResult" nillable="true" type="tns:ReceiverInvoicesResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReceiverInvoicesResult">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="RowGuid" type="q5:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InvoiceID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApproveInvoicesByETTN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Year" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ETTNList" type="tns:ArrayOfGuid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfGuid">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://microsoft.com/wsdl/types/" minOccurs="0" maxOccurs="unbounded" name="guid" type="q6:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApproveInvoicesByETTNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ApproveInvoicesByETTNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveInvoicesByDateRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="1" maxOccurs="1" name="endDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApproveInvoicesByDateRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="ApproveInvoicesByDateRangeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRawData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element xmlns:q7="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="ETTN" nillable="true" type="q7:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="RawData" type="tns:RawData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRawDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="AddRawDataResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelInvoiceByETTN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element xmlns:q8="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="ETTN" type="q8:guid" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReservedDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelInvoiceByETTNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CancelInvoiceByETTNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelInvoiceByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReservedDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelInvoiceByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CancelInvoiceByIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceByETTN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element xmlns:q9="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="ETTN" type="q9:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceByETTNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="DeleteInvoiceByETTNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteInvoiceByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="DeleteInvoiceByIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInvoiceByETTN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element xmlns:q10="http://microsoft.com/wsdl/types/" minOccurs="1" maxOccurs="1" name="ETTN" type="q10:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInvoiceByETTNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CheckInvoiceByETTNResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInvoiceByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckInvoiceByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="CheckInvoiceByIDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceHeaderByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="VKN" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInvoiceHeaderByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetInvoiceHeaderByIDResult" type="tns:Invoice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSignedUblTr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RawData" type="xs:base64Binary" />
+        <xs:element minOccurs="1" maxOccurs="1" name="SendType" type="tns:SendType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ModuleCode" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ModuleKey" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="Description" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="SendType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KAGIT" />
+      <xs:enumeration value="ELEKTRONIK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SendSignedUblTrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="SendSignedUblTrResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

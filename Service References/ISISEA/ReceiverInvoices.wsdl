@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://isisbilisim.com.tr/services/earchive" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://isisbilisim.com.tr/services/earchive" location="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="CustomBinding_IReceiverInvoices" type="i0:IReceiverInvoices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendInvoices">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/SendInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveInvoicesByETTN">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/ApproveInvoicesByETTN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveInvoicesByDateRange">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/ApproveInvoicesByDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRawData">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/AddRawData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoiceByETTN">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CancelInvoiceByETTN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelInvoiceByID">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CancelInvoiceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceByETTN">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/DeleteInvoiceByETTN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvoiceByID">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/DeleteInvoiceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInvoiceByETTN">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CheckInvoiceByETTN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInvoiceByID">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/CheckInvoiceByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceHeaderByID">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/GetInvoiceHeaderByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSignedUblTr">
+      <soap:operation soapAction="http://isisbilisim.com.tr/services/earchive/IReceiverInvoices/SendSignedUblTr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

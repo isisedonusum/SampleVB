@@ -93,6 +93,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Service References\ISISEA\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ISISRIL\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +125,20 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\ISISEA\ReceiverInvoices.wsdl" />
+    <None Include="Service References\ISISEA\ReceiverInvoices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISEA\ReceiverInvoices1.wsdl" />
+    <None Include="Service References\ISISEA\ReceiverInvoices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISEA\SampleVB.ISISEA.Invoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ISISEA\SampleVB.ISISEA.ReceiverInvoicesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ISISRIL\ReportInvoiceList.wsdl" />
     <None Include="Service References\ISISRIL\ReportInvoiceList.xsd">
@@ -158,6 +177,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ISISEA\" />
     <WCFMetadataStorage Include="Service References\ISISRIL\" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +191,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ISISRIL\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISEA\ReceiverInvoices.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISEA\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISEA\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISEA\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>

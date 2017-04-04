@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="48889a8d-126a-47b2-b0f8-194e59bda40a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://musteritestws.isisbilisim.com.tr/Services/earchive/ReceiverInvoices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReceiverInvoices.wsdl" MetadataType="Wsdl" ID="abe4c1c3-4aa8-4d3a-a971-0097d63ddf37" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ReceiverInvoices.xsd" MetadataType="Schema" ID="fcfa735e-e0d5-4c2e-a92f-31baf3f50e97" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?xsd=xsd0" />
+    <MetadataFile FileName="ReceiverInvoices.disco" MetadataType="Disco" ID="14202e06-060c-445d-bfa7-2f15be2723ea" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?disco" />
+    <MetadataFile FileName="ReceiverInvoices1.wsdl" MetadataType="Wsdl" ID="4f360144-e18a-437e-9006-e2b8fc0e7e94" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?wsdl" />
+    <MetadataFile FileName="ReceiverInvoices1.xsd" MetadataType="Schema" ID="459960f6-f274-49e6-8c9e-d4829d01902c" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/earchive/ReceiverInvoices.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
