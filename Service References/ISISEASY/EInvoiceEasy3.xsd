@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://isisbilisim.com.tr/data/einvoice" elementFormDefault="qualified" targetNamespace="http://isisbilisim.com.tr/data/einvoice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Contracts.ResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ByteData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="CommercialResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommercialResponseEnvelopeUUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ETTN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnvelopeUUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extensions" nillable="true" type="tns:ArrayOfInvoiceExtension" />
+      <xs:element minOccurs="0" name="GIBCode" type="xs:int" />
+      <xs:element minOccurs="0" name="GIBMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Profile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiverAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiverVKN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderVKN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:Contracts.StatusType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contracts.ResponseType" nillable="true" type="tns:Contracts.ResponseType" />
+  <xs:complexType name="ArrayOfInvoiceExtension">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceExtension" nillable="true" type="tns:InvoiceExtension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceExtension" nillable="true" type="tns:ArrayOfInvoiceExtension" />
+  <xs:complexType name="InvoiceExtension">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Extension">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ETTN" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UpdatedDate" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UserCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvoiceExtension" nillable="true" type="tns:InvoiceExtension" />
+  <xs:complexType name="Extension">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Structure" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValuePart1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValuePart2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValuePart3" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ValuePart4" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Extension" nillable="true" type="tns:Extension" />
+  <xs:simpleType name="Contracts.StatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="ERROR" />
+      <xs:enumeration value="PROCCESSING" />
+      <xs:enumeration value="ACCEPTED" />
+      <xs:enumeration value="REJECTED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Contracts.StatusType" nillable="true" type="tns:Contracts.StatusType" />
+  <xs:simpleType name="Contracts.CommercialResponseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACCEPTED" />
+      <xs:enumeration value="REJECTED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Contracts.CommercialResponseType" nillable="true" type="tns:Contracts.CommercialResponseType" />
+  <xs:simpleType name="Contracts.DirectionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INBOUND" />
+      <xs:enumeration value="OUTBOUND" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Contracts.DirectionType" nillable="true" type="tns:Contracts.DirectionType" />
+  <xs:complexType name="ArrayOfContracts.ResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contracts.ResponseType" nillable="true" type="tns:Contracts.ResponseType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContracts.ResponseType" nillable="true" type="tns:ArrayOfContracts.ResponseType" />
+</xs:schema>

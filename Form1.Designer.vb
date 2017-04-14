@@ -24,6 +24,10 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtURLEasy = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtURLeArchive = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -34,15 +38,20 @@ Partial Class Form1
         Me.txtURL = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtURLeArchive = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtETTN = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -50,6 +59,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -60,6 +70,8 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label7)
+        Me.TabPage1.Controls.Add(Me.txtURLEasy)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.txtURLeArchive)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -79,10 +91,52 @@ Partial Class Form1
         Me.TabPage1.Text = "Bilgiler"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(24, 61)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(81, 20)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "URL Easy"
+        '
+        'txtURLEasy
+        '
+        Me.txtURLEasy.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtURLEasy.Location = New System.Drawing.Point(139, 56)
+        Me.txtURLEasy.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtURLEasy.Name = "txtURLEasy"
+        Me.txtURLEasy.Size = New System.Drawing.Size(604, 26)
+        Me.txtURLEasy.TabIndex = 10
+        Me.txtURLEasy.Text = "http://musteritestws.isisbilisim.com.tr/services/einvoice/ReportInvoiceList.svc"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(24, 97)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(94, 20)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "URL e-Arşiv"
+        '
+        'txtURLeArchive
+        '
+        Me.txtURLeArchive.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtURLeArchive.Location = New System.Drawing.Point(139, 92)
+        Me.txtURLeArchive.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtURLeArchive.Name = "txtURLeArchive"
+        Me.txtURLeArchive.Size = New System.Drawing.Size(604, 26)
+        Me.txtURLeArchive.TabIndex = 8
+        Me.txtURLeArchive.Text = "http://musteritestws.isisbilisim.com.tr/Services/earchive/ReceiverInvoices.svc"
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(49, 177)
+        Me.Label4.Location = New System.Drawing.Point(49, 213)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 20)
@@ -91,7 +145,7 @@ Partial Class Form1
         '
         'txtPass
         '
-        Me.txtPass.Location = New System.Drawing.Point(139, 172)
+        Me.txtPass.Location = New System.Drawing.Point(139, 208)
         Me.txtPass.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(148, 26)
@@ -100,7 +154,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(49, 137)
+        Me.Label3.Location = New System.Drawing.Point(49, 173)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(89, 20)
@@ -109,7 +163,7 @@ Partial Class Form1
         '
         'txtUser
         '
-        Me.txtUser.Location = New System.Drawing.Point(139, 132)
+        Me.txtUser.Location = New System.Drawing.Point(139, 168)
         Me.txtUser.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(148, 26)
@@ -118,7 +172,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(49, 97)
+        Me.Label2.Location = New System.Drawing.Point(49, 133)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 20)
@@ -127,7 +181,7 @@ Partial Class Form1
         '
         'txtVKN
         '
-        Me.txtVKN.Location = New System.Drawing.Point(139, 92)
+        Me.txtVKN.Location = New System.Drawing.Point(139, 128)
         Me.txtVKN.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtVKN.Name = "txtVKN"
         Me.txtVKN.Size = New System.Drawing.Size(148, 26)
@@ -176,27 +230,6 @@ Partial Class Form1
         Me.Button1.Text = "Listele"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 61)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(94, 20)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "URL e-Arşiv"
-        '
-        'txtURLeArchive
-        '
-        Me.txtURLeArchive.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtURLeArchive.Location = New System.Drawing.Point(139, 56)
-        Me.txtURLeArchive.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.txtURLeArchive.Name = "txtURLeArchive"
-        Me.txtURLeArchive.Size = New System.Drawing.Size(604, 26)
-        Me.txtURLeArchive.TabIndex = 8
-        Me.txtURLeArchive.Text = "http://musteritestws.isisbilisim.com.tr/Services/earchive/ReceiverInvoices.svc"
-        '
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.Button2)
@@ -208,6 +241,60 @@ Partial Class Form1
         Me.TabPage3.Text = "İptal Fatura Gönder"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(239, 118)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(112, 35)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Gönder"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.ComboBox1)
+        Me.TabPage4.Controls.Add(Me.Label8)
+        Me.TabPage4.Controls.Add(Me.Button3)
+        Me.TabPage4.Controls.Add(Me.Label6)
+        Me.TabPage4.Controls.Add(Me.txtETTN)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(758, 603)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Fatura Durum Sorgula"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(316, 125)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(95, 33)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "Sorgula"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(20, 59)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(49, 20)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "ETTN"
+        '
+        'txtETTN
+        '
+        Me.txtETTN.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtETTN.Location = New System.Drawing.Point(126, 56)
+        Me.txtETTN.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txtETTN.Name = "txtETTN"
+        Me.txtETTN.Size = New System.Drawing.Size(500, 26)
+        Me.txtETTN.TabIndex = 2
+        '
         'TextBox5
         '
         Me.TextBox5.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -218,15 +305,25 @@ Partial Class Form1
         Me.TextBox5.Size = New System.Drawing.Size(766, 287)
         Me.TextBox5.TabIndex = 2
         '
-        'Button2
+        'Label8
         '
-        Me.Button2.Location = New System.Drawing.Point(239, 118)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(112, 35)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Gönder"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(20, 19)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 20)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Fatura Yönü"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Gelen", "Giden"})
+        Me.ComboBox1.Location = New System.Drawing.Point(126, 19)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(163, 28)
+        Me.ComboBox1.TabIndex = 6
+        Me.ComboBox1.Text = "Gelen"
         '
         'Form1
         '
@@ -243,6 +340,8 @@ Partial Class Form1
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,5 +363,13 @@ Partial Class Form1
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtETTN As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents txtURLEasy As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 
 End Class
